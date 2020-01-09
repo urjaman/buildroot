@@ -144,6 +144,17 @@ endif
 
 ###############################################################################
 
+comment "Legacy options removed in 2020.02 (backported things)"
+
+config BR2_PACKAGE_WIREGUARD
+	bool "wireguard package renamed"
+	depends on BR2_TOOLCHAIN_HEADERS_AT_LEAST_3_10
+	select BR2_LEGACY
+	select BR2_PACKAGE_WIREGUARD_TOOLS
+	help
+	  The wireguard package has been renamed to wireguard-tools to
+	  match upstream.
+
 comment "Legacy options removed in 2019.11"
 
 config BR2_PACKAGE_OPENVMTOOLS_PROCPS
